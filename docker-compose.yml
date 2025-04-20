@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  db:
+    image: mysql
+    container_name: work-service.db
+    restart: always
+    environment:
+      MYSQL_DATABASE: work-database
+      MYSQL_USER: christian
+      MYSQL_PASSWORD: 123456
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+      - ./init:/docker-entrypoint-initdb.d
+
+volumes:
+  mysql_data:
