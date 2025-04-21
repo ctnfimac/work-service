@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, String, DECIMAL, UniqueConstraint
-from app.models.base_model import BaseModel
+from models.base_model import BaseModel
 from db.base import Base
 
 class Service(Base, BaseModel):
@@ -12,7 +12,7 @@ class Service(Base, BaseModel):
     typeservice_id = Column("tipodeservicio_id", Integer, nullable=False)
 
     __table_args__ = (
-        UniqueConstraint('gardener_id', 'typeservice_id', name='unique_tipodeservicio_jardinero'),
+        UniqueConstraint('jardinero_id', 'tipodeservicio_id', name='unique_tipodeservicio_jardinero'),
     )
 
 """

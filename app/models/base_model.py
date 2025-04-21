@@ -1,5 +1,5 @@
 
-import datetime
+from datetime import datetime
 from sqlalchemy.ext.declarative import declared_attr
 from sqlalchemy import TIMESTAMP, Column, Integer
 
